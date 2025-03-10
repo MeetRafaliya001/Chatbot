@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Inquiry Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            Indrashil ChatBot
+        </div>
+        <div class="chatbot-body">
+            <div class="chatbot-message">
+                Hi there, Welcome to Indrashil Chatbot! If you need any assistance, I'm always here.
+            </div>
+            <div class="chatbot-message">
+                Which of the following user groups do you belong to?
+            </div>
+            <div class="chatbot-options">
+                <div class="option">1. Student's Section Enquiry.</div>
+                <div class="option">2. Faculty Section Enquiry.</div>
+                <div class="option">3. Parent's Section Enquiry.</div>
+                <div class="option">4. Visitor's Section Enquiry.</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Enter your enquiry number..." onkeypress="return isNumber(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function isNumber(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        function sendMessage() {
+            var userInput = document.getElementById('userInput').value;
+            if (userInput) {
+                
+                alert("You selected option: " + userInput);
+                document.getElementById('userInput').value = ''; 
+            }
+        }
+    </script>
+ 
+</body>
+</html>
